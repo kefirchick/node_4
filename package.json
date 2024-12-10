@@ -1,0 +1,30 @@
+{
+  "name": "node_4",
+  "version": "1.0.0",
+  "description": "Server with Sequelize and Postresql Database",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "start:dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kefirchick/node_4.git"
+  },
+  "author": "Ilya Kustov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kefirchick/node_4/issues"
+  },
+  "homepage": "https://github.com/kefirchick/node_4#readme",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "pg": "^8.13.1",
+    "sequelize": "^6.37.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
