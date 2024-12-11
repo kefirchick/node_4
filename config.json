@@ -1,5 +1,4 @@
 {
     "dialect": "postgres",
-    "host": "localhost",
-    "database": "postgres"
+    "host": "localhost"
 }  
