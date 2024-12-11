@@ -14,7 +14,12 @@ module.exports = (Sequelize, config) => {
     const weapons = Weapon(Sequelize, sequelize);
     const pizzas = Pizza(Sequelize, sequelize);
 
-    // TODO: создание связей между таблицами
+    turtles.belongsTo(weapons);
+    weapons.hasOne(turtles);
+    turtles.belongsTo(pizzas, { foreignKey: "firstFavoritePizzaId" });
+    pizzas.hasMany(turtles, { foreignKey: "firstFavoritePizzaId" });
+    turtles.belongsTo(pizzas, { foreignKey: "secondFavoritePizzaId" });
+    pizzas.hasMany(turtles, { foreignKey: "secondFavoritePizzaId" });
 
     return {
         turtles,

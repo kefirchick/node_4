@@ -3,7 +3,7 @@ const Sequelize = require("sequelize");
 const config = require("./config.json");
 const db = require("./models")(Sequelize, config);
 
-db.sequelize.sync()
+db.sequelize.sync({force: true})
     .then(() => {
         console.log("Database synced successfully");
     })
