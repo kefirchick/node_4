@@ -5,8 +5,8 @@ module.exports = (db) => {
 
     router.post("/", async ({ body }, res) => {
         try {
-            const news = await db.pizzas.create(body);
-            res.json(news);
+            const pizza = await db.pizzas.create(body);
+            res.json(pizza);
         } catch (err) {
             return next({ status: 500, message: err.message });
         }

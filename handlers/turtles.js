@@ -5,8 +5,8 @@ module.exports = (db) => {
 
     router.post("/", async ({ body }, res) => {
         try {
-            const news = await db.turtles.create(body);
-            res.json(news);
+            const turtle = await db.turtles.create(body);
+            res.json(turtle);
         } catch (err) {
             return next({ status: 500, message: err.message });
         }
