@@ -3,9 +3,9 @@ const express = require("express");
 const Sequelize = require("sequelize");
 const config = require("./config.json");
 const db = require("./models")(Sequelize, config);
-const turtlesRouter = require("./handlers/turtles")(db);
-const pizzasRouter = require("./handlers/pizzas")(db);
-const weaponsRouter = require("./handlers/weapons")(db);
+const turtlesRouter = require("./routers/turtles")(db.turtles);
+const pizzasRouter = require("./routers/pizzas")(db.pizzas);
+const weaponsRouter = require("./routers/weapons")(db.weapons);
 
 const app = express();
 
