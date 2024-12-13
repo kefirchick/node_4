@@ -16,10 +16,10 @@ module.exports = (Sequelize, config) => {
 
     turtles.belongsTo(weapons);
     weapons.hasOne(turtles);
-    turtles.belongsTo(pizzas, { foreignKey: "firstFavoritePizzaId" });
-    pizzas.hasMany(turtles, { foreignKey: "firstFavoritePizzaId" });
-    turtles.belongsTo(pizzas, { foreignKey: "secondFavoritePizzaId" });
-    pizzas.hasMany(turtles, { foreignKey: "secondFavoritePizzaId" });
+    turtles.belongsTo(pizzas, { foreignKey: "firstFavoritePizzaId", as: "firstFavoriteTurtles" });
+    pizzas.hasMany(turtles, { foreignKey: "firstFavoritePizzaId", as: "firstFavoriteTurtles" });
+    turtles.belongsTo(pizzas, { foreignKey: "secondFavoritePizzaId", as: "secondFavoriteTurtles" });
+    pizzas.hasMany(turtles, { foreignKey: "secondFavoritePizzaId", as: "secondFavoriteTurtles" });
 
     return {
         turtles,
