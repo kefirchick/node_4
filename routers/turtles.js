@@ -2,15 +2,14 @@ const express = require("express");
 
 module.exports = (db) => {
     const router = express.Router();
+    const handlers = require('../handlers')(db.turtles);
 
-    router.post("/", async ({ body }, res) => {
-        try {
-            const turtle = await db.turtles.create(body);
-            res.json(turtle);
-        } catch (err) {
-            return next({ status: 500, message: err.message });
-        }
-    });
+    router.post('/', handlers.postHandler);
+    router.get("/", handlers.getHandler);
+    router.get("/:id", handlers.getByIdHandler);
+    router.put("/", handlers.putHandler);
+    router.put("/:id", handlers.putByIdHandler);
+    router.delete("/:id", handlers.deleteHandler);
 
     return router;
 };

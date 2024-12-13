@@ -1,22 +1,15 @@
 const express = require("express");
 
-module.exports = (table) => {
+module.exports = (db) => {
     const router = express.Router();
-    const {
-        postHandler,
-        getHandler,
-        getByIdHandler,
-        putHandler,
-        putByIdHandler
-    } = require('../handlers')(table);
+    const handlers = require('../handlers')(db.weapons);
 
-    router.post('/', postHandler);
-    router.get("/", getHandler);
-    router.get("/:id", getByIdHandler);
-    router.put("/", putHandler);
-    router.put("/:id", putByIdHandler);
-
-    router.delete("/:id", );
+    router.post('/', handlers.postHandler);
+    router.get("/", handlers.getHandler);
+    router.get("/:id", handlers.getByIdHandler);
+    router.put("/", handlers.putHandler);
+    router.put("/:id", handlers.putByIdHandler);
+    router.delete("/:id", handlers.deleteHandler);
 
     return router;
 };
