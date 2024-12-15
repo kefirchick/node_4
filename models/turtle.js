@@ -6,10 +6,10 @@ module.exports = (Sequelize, sequelize) => {
             autoIncrement: true,
         },
         name: {
-            type: Sequelize.STRING
+            type: Sequelize.STRING,
         },
         color: {
-            type: Sequelize.STRING
-        }
+            type: Sequelize.STRING,
+        },
     });
 };

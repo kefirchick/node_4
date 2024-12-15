@@ -13,5 +13,5 @@ module.exports = (table) => {
         } catch (err) {
             return next({ status: 500, message: err.message });
         }
-    }
-}
+    };
+};

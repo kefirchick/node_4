@@ -13,7 +13,7 @@ function buildWhere(query) {
         }
     }
 
-    return { where };
+    return where;
 }
 
 module.exports = { buildWhere };

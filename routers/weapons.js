@@ -2,9 +2,9 @@ const express = require("express");
 
 module.exports = (db) => {
     const router = express.Router();
-    const handlers = require('../handlers')(db.weapons);
+    const handlers = require("../handlers")(db.weapons);
 
-    router.post('/', handlers.postHandler);
+    router.post("/", handlers.postHandler);
     router.get("/", handlers.getHandler);
     router.get("/:id", handlers.getByIdHandler);
     router.put("/", handlers.putHandler);

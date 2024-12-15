@@ -6,13 +6,13 @@ module.exports = (Sequelize, sequelize) => {
             autoIncrement: true,
         },
         name: {
-            type: Sequelize.STRING
+            type: Sequelize.STRING,
         },
         description: {
-            type: Sequelize.STRING
+            type: Sequelize.STRING,
         },
         calories: {
-            type: Sequelize.DOUBLE
-        }
+            type: Sequelize.DOUBLE,
+        },
     });
 };
